@@ -1,0 +1,42 @@
+
+socket protocoles:
+
+tous les params doivent etre passés en JSON
+
+fais attention au nom il n'y a pas de "_"
+
+connection du user :
+"login" => {
+  "username": "ugo sert d'exemple"
+}
+return sur "login"
+
+déconnexion:
+"logout" => {
+  "username": "ugo une fois n'est pas coutume"
+}
+return sur "logout"
+
+envoi d'un message (il y a un check si channel + user exist)
+"message" => {
+  "username": "ugo encore et encore",
+  "channel": "nom de la channel",
+  "message": "ici il faut mettre un lama vert"
+}
+return sur "message" si erreur sinon sur le nom de la channel
+
+création d'une channel (un nom de channel est unique)
+"create channel" => {
+  "channel": "nom de la channel"
+}
+return sur "create channel"
+
+récupérations de toutes les channels
+"get channels" => {}
+return sur "get channels"
+
+récupération des messages d'une channel (triés)
+"get messages" => {
+  "channel": "coco"
+}
+return sur "get messages"
